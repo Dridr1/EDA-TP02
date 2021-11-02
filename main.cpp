@@ -6,13 +6,18 @@ int main()
 {
     ABP arvore;
 
-    char fileName[11] = "teste.csv";
+
+    char fileName[11];
     No *raiz = NULL;
     int option;
 
+    std::cout << "Digite o nome do arquivo" << std::endl;
+    std::cin >> fileName;
+    std::cout << std::endl;
+
     do
     {
-      std::cout << "Escolha uma opção: " << std::endl;
+      std::cout << "Escolha uma opÃ§Ã£o: " << std::endl;
       std::cout << "1) Gerar ABP" << std::endl;
       std::cout << "2) Calcular Fator de Balanceamento" << std::endl;
       std::cout << "3) Imprimir ABP" << std::endl;
@@ -22,7 +27,7 @@ int main()
       switch (option)
       {
         case 1: {
-          std::system("clear || cls");
+          std::system("clear");
           FILE *fp;
           char ch, valor[5];
           int count = 0, val;
@@ -57,30 +62,28 @@ int main()
            break;
 
         case 2: 
-          std::system("clear || cls");
+          std::system("clear");
           arvore.fatorBalanceamento(raiz);
           std::cout << "Fator de balanceamento calculado com sucesso!" << std::endl;
           std::cout << std::endl;
           break;
 
         case 3: 
-          std::system("clear || cls");
+          std::system("clear");
           std::cout << "FatBal" << "    |     " << "Chave" << std::endl;
           arvore.printOut(raiz);
           std::cout << std::endl;
           break;
 
         case 4: 
-          std::system("clear || cls");
+          std::system("clear");
           std::exit(0);
           break;
 
         default:
-          std::cout << "Por favor, digite uma opção válida" << std::endl;
+          std::cout << "Por favor, digite uma opÃ§Ã£o vÃ¡lida" << std::endl;
           break;
       }
 
     } while (option != 4);
-
-    
 }
